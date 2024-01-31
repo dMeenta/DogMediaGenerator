@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Perros</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Perritos!</h1>
+        <p class="sub-title">Genera una imagen o gif de un perro con un solo click!</p>
+        <a class="btn" href="/submit">🐶</a>
+    </header>
+    <div class="spc">
+        <% if(url.includes("mp4")) { %>
+            <video src="<%= url %>" autoplay controls muted alt="video del perrito"></video>
+            <%} else{ %>
+                <img src="<%= url %>" class="media" alt="imagen o gif del perrito">
+                <% } %>
+    </div>
+</body>
+
+</html>
