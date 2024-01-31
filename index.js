@@ -11,21 +11,22 @@ app.get("/", async (req, res)=>{
     try {
         const result = await axios.get(API_URL);
         res.render("index.ejs", { url: result.data.url });
+        console.log(result.data);
       } catch (error) {
         console.log(error.response.data);
         res.status(500);
       }
 })
 
-app.get("/submit", async (req, res)=>{
+app.get("/submit", (req, res)=>{
     try {
-        const result = await axios.get(API_URL);
-        res.redirect("/");
+      res.redirect("/");
       } catch (error) {
         console.log(error.response.data);
         res.status(500);
       }
 })
+
 app.listen(port, ()=>{
     console.log(`Server is running on ${port}`);
 });
